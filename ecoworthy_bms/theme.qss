@@ -1,0 +1,12 @@
+QWidget { background: #FDFDFD; color: #14213d; font-family: "Segoe UI", sans-serif; font-size: 13px; }
+#addr { color: #6b7280; font-family: Consolas, monospace; }
+#status { color: #6b7280; }
+#soc { color: #02339A; font-size: 84px; font-weight: 700; }
+#chip { font-weight: 600; }
+#section { color: #02339A; font-size: 15px; font-weight: 700; margin-top: 6px; }
+#imbalance { color: #6b7280; font-size: 13px; }
+#tile { background: white; border: 1px solid #e5e7eb; border-radius: 10px; }
+#tileTitle { color: #6b7280; font-size: 12px; }
+#tileValue { color: #02339A; font-size: 26px; font-weight: 600; }
+
+/* sidebar nav */

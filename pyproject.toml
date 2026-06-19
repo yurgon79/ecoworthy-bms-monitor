@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ecoworthy-bms-monitor"
+version = "0.2.0"
+description = "Cross-platform desktop monitor for ECO-WORTHY / DCHOUSE BMC1 LiFePO4 batteries over BLE. Live SOC/cells/history, low-reserve safety automation (shell/MQTT/webhook/ASCOM-Alpaca), system tray. Read-only, freeware (MIT)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = [
+    "PySide6>=6.6",
+    "qasync>=0.27",
+    "ecoworthy-bmc1-protocol>=0.1.0",
+    "platformdirs>=3.0",
+    "aiohttp>=3.9",
+]
+
+[project.optional-dependencies]
+mqtt = ["paho-mqtt>=1.6"]
+
+[project.scripts]
+ecoworthy-bms = "ecoworthy_bms.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["ecoworthy_bms*"]
