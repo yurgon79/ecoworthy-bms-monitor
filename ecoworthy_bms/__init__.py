@@ -1,2 +1,2 @@
-"""ECO-WORTHY BMS — native Windows monitor (PySide6). See SPEC.md."""
-__version__ = "0.0.1"
+"""ECO-WORTHY BMS Monitor — cross-platform desktop BLE monitor (PySide6)."""
+__version__ = "0.2.0"

@@ -16,6 +16,7 @@ from PySide6.QtWidgets import (
     QStackedWidget, QVBoxLayout, QWidget,
 )
 
+from .. import __version__
 from ..alerts import Alert, AlertEngine, Category, Severity
 from ..autostart import apply_autostart
 from ..config import AppConfig
@@ -56,7 +57,7 @@ class MainWindow(QWidget):
         self._last: Optional[Reading] = None
         self._bank_readings: dict = {}        # mac -> last Reading (active pack for now)
         self._tray = None
-        self.setWindowTitle(self.tr("ECO-WORTHY BMS Monitor"))
+        self.setWindowTitle(self.tr("ECO-WORTHY BMS Monitor") + f"  v{__version__}")
         self.setMinimumSize(720, 520)
 
         # pages
@@ -80,6 +81,9 @@ class MainWindow(QWidget):
         brand = QLabel("ECO-WORTHY"); brand.setObjectName("brand")
         brand.setAlignment(Qt.AlignmentFlag.AlignCenter)
         nv.addWidget(brand)
+        ver = QLabel(f"v{__version__}"); ver.setObjectName("status")
+        ver.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        nv.addWidget(ver)
         self._statusDot = QLabel("● disconnected"); self._statusDot.setObjectName("status")
         self._statusDot.setAlignment(Qt.AlignmentFlag.AlignCenter)
         nv.addWidget(self._statusDot)
